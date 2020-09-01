@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./ContactItem.module.css";
+import s from "./ContactItem.module.css";
 
-export default function ContactItem({ contact, children, onRemoveContact }) {
+export default function ContactItem({ contact, onRemoveContact }) {
   return (
-    <li className={styles.ContactItem}>
+    <li className={s.ContactItem}>
       {contact.name}: {contact.number}
       <button
-        id={contact.id}
-        className="Button"
         type="submit"
+        id={contact.id}
+        className={s.Button}
         onClick={onRemoveContact}
       >
         Remove Contact

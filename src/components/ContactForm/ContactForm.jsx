@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
 import NumberFormat from "react-number-format";
 import { v4 as uuidv4 } from "uuid";
+import PropTypes from "prop-types";
 
 import Notification from "../Notification/Notification";
 
-import styles from "./ContactForm.module.css";
+import s from "./ContactForm.module.css";
 import AppearStyles from "./AppearStyles.module.css";
-import "../../index.css";
 
 export default class ContactForm extends Component {
   state = {
@@ -66,21 +66,21 @@ export default class ContactForm extends Component {
       <>
         <CSSTransition
           in={contactInListEntered}
-          unmountOnExit
           classNames={AppearStyles}
+          unmountOnExit
           timeout={2000}
         >
           <Notification />
         </CSSTransition>
-        <form className={styles.ContactForm} onSubmit={this.handleSubmit}>
+        <form className={s.ContactForm} onSubmit={this.handleSubmit}>
           <label>
             <p>Name</p>
             <input
-              type="text"
-              value={name}
               onChange={this.handleChange}
-              name="name"
               placeholder="Name..."
+              value={name}
+              type="text"
+              name="name"
               autoFocus
             />
           </label>
@@ -89,15 +89,15 @@ export default class ContactForm extends Component {
             <p>Number</p>
             <NumberFormat
               format="(###) ###-####"
-              mask=""
-              name="number"
-              placeholder="Phone Number..."
               onChange={this.handleChange}
+              placeholder="Phone Number..."
               value={number}
+              name="number"
+              mask=""
             />
           </label>
 
-          <button className="Button" type="submit">
+          <button className={s.Button} type="submit">
             Add Contact
           </button>
         </form>
@@ -105,3 +105,9 @@ export default class ContactForm extends Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+  contactInListEntered: PropTypes.bool,
+};

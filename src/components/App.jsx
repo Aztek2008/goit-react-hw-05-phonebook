@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import Section from "./Section/Section";
 import ContactForm from "./ContactForm/ContactForm";
-import Filter from "./Filter";
 import ContactList from "./ContactList/ContactList";
+import Section from "./Section/Section";
+import Filter from "./Filter";
 
 class App extends Component {
   state = {
@@ -123,3 +124,8 @@ class App extends Component {
 }
 
 export default App;
+
+App.propTypes = {
+  contacts: PropTypes.array,
+  filter: PropTypes.string,
+};

@@ -12,8 +12,8 @@ export default function Filter({ value, onChangeFilter }) {
         type="text"
         name="filter"
         value={value}
-        onChange={(e) => onChangeFilter(e.target)}
         placeholder="Search contact..."
+        onChange={(e) => onChangeFilter(e.target)}
       />
     </label>
   );
