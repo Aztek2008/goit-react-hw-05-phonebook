@@ -1,0 +1,10 @@
+.Section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  width: 400px;
+  margin: 10px auto;
+
+  box-shadow: var(--main-shadow);
+}
