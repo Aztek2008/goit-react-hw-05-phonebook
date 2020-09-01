@@ -11,7 +11,7 @@ export default function ContactItem({ contact, onRemoveContact }) {
         className={s.Button}
         onClick={onRemoveContact}
       >
-        Remove Contact
+        <span>✘</span>
       </button>
     </li>
   );
